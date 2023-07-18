@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      body{
+      background-image: url("download.jpg");
+  
+      background-repeat: no-repeat;
+      background-size: cover;
+   }
+      .main1{
+        /* background-color:blueviolet; */
+        height: 45vh;
+        width: 53vw;
+        margin-top: 186px;
+    margin-left:515px;
+      }
+      .main2{
+        display: flex;
+        column-gap: 2px;
+      }
+      .main2 .hrs{
+           margin-top: 125px;
+           margin-left: 22px;
+      }
+        .main2 .min{
+           margin-top: 125px;
+           margin-left: 49px;
+      }
+        .main2 .sec{
+           margin-top: 125px;
+           margin-left: 34px;
+      }
+      .main2 input{
+        height: 52px;
+        width:93px;
+        border: none;
+        text-align: center;
+        font-size: 34px;
+        background-color:white;
+        color:blue;
+        border: 4px solid blue;
+        border-radius: 5px;
+      }
+      .label1{
+        margin-top: 182px;
+    margin-left:-101px;
+    font-size:23px ;
+color: white;
+      } 
+      .label2{
+        margin-top: 182px;
+    margin-left:-106px;
+    font-size:23px ;
+color: white;
+      } 
+      .label3{
+        margin-top: 182px;
+    margin-left:-83px;
+    font-size:23px ;
+color: white;
+      } 
+     .main3{
+      display: flex;
+      flex-direction: row;
+
+     }
+     p{
+color: aliceblue;
+font-size: 45px;
+margin-top: 120px;
+margin-left: 14px;
+     }
+    
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="main1">
+          <div class="main2">
+            <div class="main3">
+            <input class="hrs" type="text" value="0"><p>:</p>
+            <label  class="label1">Hours</label></div>
+            <div class="main3">
+         <input class="min" type="text" value="0"><p>:</p>
+         <label class="label2">Minutes</label></div>
+         <div class="main3">
+         <input class="sec" type="text" value="0">
+         <label class="label3">Second</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+   
+    const inputs=document.querySelectorAll("input");
+      
+      
+    function clock(){
+      const now=new Date();
+    const hrs=(now.getHours()<10?"0":"")+now.getHours();
+    const min=(now.getMinutes()<10?"0":"")+now.getMinutes();
+    const sec=(now.getSeconds()<10?"0":"")+now.getSeconds();
+    
+      inputs[0].value=hrs;
+      inputs[1].value=min;
+      inputs[2].value=sec;
+    }
+    setInterval(()=>{
+    clock();
+}
+,1000);
+  
+  </script>
+</body>
+</html>
